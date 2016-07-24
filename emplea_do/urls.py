@@ -5,10 +5,12 @@ from core.views import JobList, JobDetail, JobCreate
 
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     # Examples:
-    # url(r'^$', 'emplea_do.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    #   url(r'^$', 'emplea_do.views.home', name='home'),
+    #   url(r'^blog/', include('blog.urls')),
+
     url(r'^$', JobList.as_view()),
     url(r'^job/new/$', JobCreate.as_view()),
     url(r'^job/(?P<pk>\d+)/$', JobDetail.as_view()),
